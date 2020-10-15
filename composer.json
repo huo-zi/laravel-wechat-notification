@@ -23,5 +23,12 @@
 		"psr-4" : {
 			"Huozi\\LaravelWechatNotification\\" : "src"
 		}
+	},
+	"extra" : {
+		"laravel" : {
+			"providers" : [
+				"Huozi\\LaravelWechatNotification\\ServiceProvider"
+			]
+		}
 	}
 }
