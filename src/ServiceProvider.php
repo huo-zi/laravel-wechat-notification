@@ -1,10 +1,12 @@
 <?php
 namespace Huozi\LaravelWechatNotification;
 
+use Illuminate\Support\ServiceProvider AS LaravelServiceProvider;
 use Illuminate\Support\Facades\Notification;
 use Huozi\LaravelWechatNotification\Channels\WechatTemplateChannel;
 
-class ServiceProvider extends ServiceProvider
+
+class ServiceProvider extends LaravelServiceProvider
 {
 
     /**
@@ -13,6 +15,15 @@ class ServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
+    {
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
     {
         $channels = [
             'officate_template',
@@ -25,15 +36,5 @@ class ServiceProvider extends ServiceProvider
                 return new WechatTemplateChannel($channel);
             });
         }
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        
     }
 }
