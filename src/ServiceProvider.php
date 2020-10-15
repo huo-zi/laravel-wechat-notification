@@ -1,11 +1,10 @@
 <?php
-namespace Huozi\LaravelWechatNotification\Providers;
+namespace Huozi\LaravelWechatNotification;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Notification;
 use Huozi\LaravelWechatNotification\Channels\WechatTemplateChannel;
 
-class WechatNotificationServiceProvider extends ServiceProvider
+class ServiceProvider extends ServiceProvider
 {
 
     /**
