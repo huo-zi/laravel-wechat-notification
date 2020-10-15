@@ -11,6 +11,7 @@
 		}
 	],
 	"require" : {
+		"php" : "~7.0",
 		"overtrue/laravel-wechat" : "^5.1"
 	},
 	"keywords" : [
@@ -20,7 +21,7 @@
 	],
 	"autoload" : {
 		"psr-4" : {
-			"Huozi\\LaravelWechatNotification" : "src"
+			"Huozi\\LaravelWechatNotification\\" : "src"
 		}
 	}
 }
