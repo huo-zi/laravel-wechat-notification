@@ -14,15 +14,9 @@ class WechatTemplateMessage
      */
     protected $message;
 
-    /**
-     * @var 
-     */
-    public $platform;
-
-    public function __construct($app, $platform = null)
+    public function __construct($app)
     {
         $this->app = $app;
-        $this->platform = $platform;
     }
 
     public function getMessage()
