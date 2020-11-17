@@ -26,12 +26,12 @@ class ServiceProvider extends LaravelServiceProvider
     public function boot()
     {
         $channels = [
-            'officate_template',
-            'miniprogram_template',
-            'open_platform'
+            'official_account',
+            'mini_program',
+//             'open_platform'
         ];
 
-        foreach ($channels as $channel){
+        foreach ($channels as $channel) {
             Notification::extend($channel, function ($app) use ($channel) {
                 return new WechatTemplateChannel($channel);
             });

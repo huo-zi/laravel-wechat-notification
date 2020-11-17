@@ -16,18 +16,20 @@ class WechatTemplateChannel
     public function send($notifiable, Notification $notification)
     {
         /**
-         * @var \App\Notifications\Messages\WechatTemplateMessage $message
+         * @var \Huozi\LaravelWechatNotification\Messages\WechatTemplateMessage $message
          */
         $message = $notification->{'to' . Str::studly($this->channel)}($notifiable);
 
-        if (! Arr::get($message->getMessage(), 'touser')) {
-            if ($message->platform) {
-                ;
+        try {
+            if (! Arr::get($message->getMessage(), 'touser')) {
+                $message->to($notifiable->routeNotificationFor($this->channel, $notification));
             }
-            $message->to($notifiable->routeNotificationFor($this->channel, $notification));
+            $res = $message->send();
+            if ($res['errcode'] != 0) {
+                throw new \Exception($res['errmsg'], $res['errcode']);
+            }
+        } catch (\Exception $e) {
+            
         }
-
-        $res = $message->send();
-        var_dump($res, $message->getMessage());
     }
 }
