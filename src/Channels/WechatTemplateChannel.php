@@ -20,16 +20,12 @@ class WechatTemplateChannel
          */
         $message = $notification->{'to' . Str::studly($this->channel)}($notifiable);
 
-        try {
-            if (! Arr::get($message->getMessage(), 'touser')) {
-                $message->to($notifiable->routeNotificationFor($this->channel, $notification));
-            }
-            $res = $message->send();
-            if ($res['errcode'] != 0) {
-                throw new \Exception($res['errmsg'], $res['errcode']);
-            }
-        } catch (\Exception $e) {
-            
+        if (! Arr::get($message->getMessage(), 'touser')) {
+            $message->to($notifiable->routeNotificationFor($this->channel, $notification));
+        }
+        $res = $message->send();
+        if ($res['errcode'] != 0) {
+            throw new \Exception($res['errmsg'], $res['errcode']);
         }
     }
 }
