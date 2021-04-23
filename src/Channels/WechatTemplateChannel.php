@@ -23,9 +23,6 @@ class WechatTemplateChannel
         if (! Arr::get($message->getMessage(), 'touser')) {
             $message->to($notifiable->routeNotificationFor($this->channel, $notification));
         }
-        $res = $message->send();
-        if ($res['errcode'] != 0) {
-            throw new \Exception($res['errmsg'], $res['errcode']);
-        }
+        return $message->send();
     }
 }
