@@ -1,5 +1,5 @@
 # laravel-wechat-notification
-这是一个laravel框架下使用微信模板消息作为notification通道的composer包,使用前请先熟读[larave-消息通知](https://learnku.com/docs/laravel/8.x/notifications/9396)
+这是一个laravel框架下使用微信模板消息作为notification通道的composer包,使用前请先熟读[laravel-消息通知](https://learnku.com/docs/laravel/8.x/notifications/9396)
 
 ### 使用方式： ###
 0. 添加composer包：
