@@ -21,7 +21,6 @@ class WechatOpenWork
      *
      * @param mixed $authCorpId
      * @param string $permanentCode
-     * @return \EasyWeChat\Work\Message\Client
      */
     public function work($authCorpId, $permanentCode = null)
     {

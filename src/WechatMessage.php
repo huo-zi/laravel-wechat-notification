@@ -26,11 +26,7 @@ class WechatMessage
 
     public static function work($name)
     {
-        /**
-         * @var \EasyWeChat\work\Application $app
-         */
-        $work = $name ? app('wechat.open_work.'.$name) : app('wechat.open_work');
-        return new WechatWorkMessage($work->message);
+        return new WechatWorkMessage(Facade::work($name)->message);
     }
 
     public static function openWork($name)
