@@ -28,7 +28,10 @@ class ServiceProvider extends LaravelServiceProvider
         $channels = [
             'official_account',
             'mini_program',
-//             'open_platform'
+            'open_official_account',
+            'open_mini_program',
+            'work',
+            'open_work'
         ];
 
         foreach ($channels as $channel) {
