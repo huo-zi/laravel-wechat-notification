@@ -43,11 +43,17 @@
 <pre><code>public function toOpenOfficialAccount()
 {
     return WechatMessage::openFlatform($name)->officateAccount($appId, $refreshToken, $accessToken)->template('templateId');
-    // 或使用闭包
+}
+// 或使用闭包创建开放平台的公众号对象
+public function toOpenOfficialAccount()
+{
     return WechatMessage::openFlatform($name)->officateAccount(function ($open) {
         return $open->officateAccount($appId, $refreshToken, $accessToken);
     })->template('templateId');
-    // 或创建好开放平台对象后使用
+}
+// 或创建好开放平台对象后使用
+public function toOpenOfficialAccount()
+{
     return (new WechatPlatform($openPlatform))->officateAccount($appId, $refreshToken, $accessToken)->template($templateId);
 }</code></pre>
 * 使用开放平台小程序发送模板消息：
