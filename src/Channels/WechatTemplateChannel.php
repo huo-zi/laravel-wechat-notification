@@ -23,7 +23,7 @@ class WechatTemplateChannel
         $message = $notification->{'to' . Str::studly($this->channel)}($notifiable);
         if ($message instanceof WechatTemplateMessage && ! Arr::get($message->getMessage(), 'touser')) {
             $message->to($notifiable->routeNotificationFor($this->channel, $notification));
-        } elseif ($message instanceof WechatWorkMessage && empty($message->to)) {
+        } elseif ($message instanceof WechatWorkMessage && empty($message->getToUser())) {
             $message->toUser($notifiable->routeNotificationFor($this->channel, $notification));
         }
         return $message->send();
