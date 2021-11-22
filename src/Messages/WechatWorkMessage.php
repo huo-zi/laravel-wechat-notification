@@ -13,5 +13,9 @@ class WechatWorkMessage extends Messenger
         parent::__construct($app);
     }
 
+    public function getToUser()
+    {
+        return $this->to;
+    }
 }
 
