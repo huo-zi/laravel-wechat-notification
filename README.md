@@ -10,7 +10,7 @@
 
 ## 使用方式： ###
 
-0. 添加composer包：
+### 0. 添加composer包：
 
 ```
 composer require "huo-zi/laravel-wechat-notification"
