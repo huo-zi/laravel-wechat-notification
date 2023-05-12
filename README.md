@@ -1,5 +1,5 @@
 # laravel-wechat-notification
-这是一个laravel框架下基于[laravel-wechat](https://github.com/overtrue/laravel-wechat)使用微信消息通知作为notification通道的composer包,使用前请先熟读[laravel-消息通知](https://learnku.com/docs/laravel/8.x/notifications/9396)  
+这是一个laravel框架下基于[laravel-wechat](https://github.com/overtrue/laravel-wechat)使用微信/企微应用消息通知作为notification通道的composer包,使用前请先熟读[laravel-消息通知](https://learnku.com/docs/laravel/8.x/notifications/9396)  
 目前已支持：  
 * 公众号模板消息
 * 小程序模板消息
