@@ -2,7 +2,9 @@
 这是一个laravel框架下基于[laravel-wechat](https://github.com/overtrue/laravel-wechat)使用微信/企微应用消息通知作为notification通道的composer包,使用前请先熟读[laravel-消息通知](https://learnku.com/docs/laravel/8.x/notifications/9396)  
 目前已支持：  
 * 公众号模板消息
+* 公众号订阅消息
 * 小程序模板消息
+* 小程序订阅消息
 * 开放平台公众号模板消息
 * 开放平台小程序模板消息
 * 企业微信消息
@@ -41,6 +43,7 @@ public function via($notifiable)
 ```php
 public function toOfficialAccount()
 {
+    // 订阅消息可使用 SubscribeMessage::officialAccount()
     return WechatMessage::officialAccount('app_name')->template('templateId')->url($url)->data(['fisrt'=>'...']);
 }
 ```
@@ -50,6 +53,7 @@ public function toOfficialAccount()
 ```php
 public function toMiniProgram()
 {
+    // 一次性订阅消息可使用 SubscribeMessage::miniProgram()
     return WechatMessage::miniProgram('app_name')->template($templateId)->formId($formId)->data([
         'first' => ''
         //
