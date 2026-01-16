@@ -9,27 +9,27 @@ use Huozi\LaravelWechatNotification\Messages\WechatWorkMessage;
 class WechatMessage
 {
 
-    public static function officialAccount($name = '')
+    public static function officialAccount($name = null)
     {
         return new OfficateAccountTemplateMessage(Facade::officialAccount($name));
     }
 
-    public static function miniProgram($name = '')
+    public static function miniProgram($name = null)
     {
         return new MiniProgramTemplateMessage(Facade::miniProgram($name));
     }
 
-    public static function openFlatform($name = '')
+    public static function openFlatform($name = null)
     {
         return new WechatPlatform(Facade::openPlatform($name));
     }
 
-    public static function work($name = '')
+    public static function work($name = null)
     {
         return new WechatWorkMessage(Facade::work($name)->message);
     }
 
-    public static function openWork($name = '')
+    public static function openWork($name = null)
     {
         return new WechatOpenWork($name ? app('wechat.open_work.'.$name) : app('wechat.open_work'));
     }
